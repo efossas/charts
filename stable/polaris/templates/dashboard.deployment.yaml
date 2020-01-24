@@ -30,11 +30,11 @@ spec:
       containers:
       - command:
         - polaris
-        - --dashboard
+        - dashboard
         - --config
         - /opt/app/config.yaml
         {{- with .Values.dashboard.basePath }}
-        - --dashboard-base-path
+        - --base-path
         - {{ . }}
         {{- end }}
         image: '{{.Values.dashboard.image.repository}}:{{.Values.dashboard.image.tag}}'
