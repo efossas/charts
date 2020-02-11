@@ -69,7 +69,6 @@ ingress:
   annotations: {}
   tls:
 
-
 webhook:
   enable: false
   replicas: 1
@@ -90,6 +89,13 @@ audit:
     tag: 0.6
     pullPolicy: Always
     imagePullSecrets: []
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 10m
+      memory: 32Mi
 
 rbac:
   create: true
